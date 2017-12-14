@@ -1,10 +1,11 @@
-# Migration-2.0-to-3.0
-Migration from DigitalState platform 2.0 to 3.0: Instructions, helper scripts, and documentation about migrating from DigitalState platform 2.0 to 3.0
+# Migration-2.x-to-3.x
+
+Migration from DigitalState platform 2.x to 3.x: Instructions, helper scripts, and documentation about migrating from DigitalState platform 2.x to 3.x
 
 
 # Overview
 
-The change from 2.0 to 3.0 is a internal structral change without changing core business functions.  Each business entitiy remains the same in version 3.0, but the entities have been decoupled from a central monolith into standalone microserivces and a javascript adminstrative and portal UI.  Each microservice manages its own database.
+The change from 2.x to 3.x is a internal structural change without changing core business functions.  Each business entity remains the same in version 3.0, but the entities have been decoupled from a central monolith into standalone microserivces and a javascript administrative and portal UI.  Each microservice manages its own database.
 
 
 **This repository contains the following:**
@@ -16,7 +17,7 @@ The change from 2.0 to 3.0 is a internal structral change without changing core 
 
 ### BPMN files for bulk transfers
 
-A series of BPMN files that are configurable to migrate content from a 2.0 instance to a 3.0 instance.
+A series of BPMN files that are configurable to migrate content from a 2.x instance to a 3.x instance.
 
 BPMN Files:
 
@@ -35,7 +36,7 @@ BPMN Files:
 
 ### User Account Migration Instructions
 
-Special care should be used when migrating users (usernames/passwords, etc) from 2.0 to 3.0 instance.
+Special care should be used when migrating users (usernames/passwords, etc) from 2.x to 3.x instance.
 
 Considerations:
 
@@ -44,7 +45,7 @@ Considerations:
 
 # Breaking changes
 
-Listing of breaking changes between 2.0 and 3.0.
+Listing of breaking changes between 2.x and 3.x.
 
 Migrations are provided wherever possible, but some changes require manual intervention if your 2.0 instance has been modified beyond core DigitalState fields.
 
@@ -59,6 +60,11 @@ Migrations are provided wherever possible, but some changes require manual inter
 1. API Changes
 
 
+## Camunda Version
+
+The Jsoup library is recommended for doing data migrations from 2.x to 3.x.  The camunda-variations repository provides a [working example](https://github.com/DigitalState/camunda-variations/tree/master/web-scrape), documentation, and code samples on how to install Jsoup and leverage the HTTP request power of Jsoup.
+
+
 # User Interface Migrations
 
 ...
@@ -66,9 +72,10 @@ Migrations are provided wherever possible, but some changes require manual inter
 
 # Translated Content Migration Considerations
 
-...
+Translation files are converted into JSON format and migrated into the CMS microservice.  See the `data` entity type in the CMS microservice for JSON format support.
 
 
 # Forms Considerations
 
-...
+1. Custom forms can be manually migrated.
+1. Formio forms can be migrated by transferring the same mongo database into the 3.x deployment.
