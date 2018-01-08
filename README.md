@@ -59,6 +59,13 @@ Migrations are provided wherever possible, but some changes require manual inter
 1. Supported Camunda Server versions
 1. API Changes
 
+## Unit Testing
+
+All processes should be unit tested before performing a migration.  Migration cannot be guaranteed without unit tests.
+
+Use DigitalState's [configurations and examples](https://github.com/DigitalState/Camunda-Spock-Testing) of Spock Framework to build Cucumber Style Unit Tests.
+
+Scripts such as Javascript and Groovy that get executed during the process can also be unit tested with the same framework.  See the [End-to-End example](https://github.com/DigitalState/Camunda-Spock-Testing/tree/master/End-to-End) for Nashorn Javascript unit testing.
 
 ## Camunda Version
 
